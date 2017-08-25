@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Friend Finder</title>
+
+	<!-- Link to the jQuery Library -->
+	<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+
+	<!-- Including Font Awesome Icons -->
+	<script src="https://use.fontawesome.com/b38c8ed4c7.js"></script>
+
+	<!-- Link to reset stylesheet -->
+	<link rel="stylesheet" type="text/css" href="css/reset.css">
+
+	<!-- Link to style stylesheet -->
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+
+	<!--Import Google Icon Font-->
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+	<!-- Compiled and minified Materialize CSS -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/css/materialize.min.css">
+
+	<!-- Compiled and minified Materialize JavaScript -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/js/materialize.min.js"></script>
+	
+</head>
+
+<body>
+	<header>
+		<nav>
+			<div class="nav-wrapper purple accent-2">
+				<i class="fa fa-facebook-square fa-5x" aria-hidden="true" id=logo-icon></i>
+				<a href="/" class="brand-logo" id="logo">Friend Finder</a>
+				<ul class="right hide-on-med-and-down" id="head-nav-links">
+					<li><a href="/home">Home</a></li>
+					<!-- <li><a href="#" class="clear">Clear Table</a></li> -->
+					<li><a href="/api/friends">API Friends List</a></li>
+					<li><a href="https://github.com/tkropp/friend-finder">GitHub Repo</a></li>
+				</ul>
+			</div>
+		</nav>
+	</header>
+
+	<main>
+		<div class="container">
+			<div class="row">
+				<div class="col s12 z-depth-5 mainpanel">
+					<div id="mainpanel-content">
+						<h1>Survey Questions About You</h1>
+						<div class="divider"></div>
+
+						<!--<h3>About You</h3> -->
+
+						<div class="input-field col s6">
+							<h5>Name (Required)</h5>
+							<i class="material-icons prefix">account_circle</i>
+							<input type="text" class="validate" placeholder="Your Name Here" id="userName">
+						</div>
+
+						<div class="input-field col s6">
+							<h5>Photo Image Link (Required)</h5>
+							<i class="material-icons prefix">picture_in_picture</i>
+							<input type="text" class="validate" placeholder="Photo Link Here" id="userPhoto">
+						</div>
+
+						<!-- Survey Questions -->
+						<div class="input-field col s12">
+							<h3>Question 1</h3>
+							<h5>I usually follow my heart over my head.</h5>
+							<select data-placeholder="" class="question-val" id="question1">
+								<option value="" disabled selected>Choose your option</option>
+								<option value="1">1 (Strongly Disagree)</option>
+								<option value="2">2</option>
+								<option value="3">3</option>
+								<option value="4">4</option>
+								<option value="5">5 (Strongly Agree)</option>
+							</select>
+						</div>
+
+						<div class="input-field col s12">
+							<h3>Question 2</h3>
+							<h5>I tend to hold grudges, and I have a hard time forgiving someone.</h5>
+							<select data-placeholder="" class="question-val" id="question2">
+								<option value="" disabled selected>Choose your option</option>
+								<option value="1">1 (Strongly Disagree)</option>
+								<option value="2">2</option>
+								<option value="3">3</option>
+								<option value="4">4</option>
+								<option value="5">5 (Strongly Agree)</option>
+							</select>
+						</div>
+
+						<div class="input-field col s12">
+							<h3>Question 3</h3>
+							<h5>Religion and/or politics are very important to me.</h5>
+							<select data-placeholder="" class="question-val" id="question3">
+								<option value="" disabled selected>Choose your option</option>
+								<option value="1">1 (Strongly Disagree)</option>
+								<option value="2">2</option>
+								<option value="3">3</option>
+								<option value="4">4</option>
+								<option value="5">5 (Strongly Agree)</option>
+							</select>
+						</div>
+
+						<div class="input-field col s12">
+							<h3>Question 4</h3>
+							<h5>I prefer the company of my pet(s) over people.</h5>
+							<select data-placeholder="" class="question-val" id="question4">
+								<option value="" disabled selected>Choose your option</option>
+								<option value="1">1 (Strongly Disagree)</option>
+								<option value="2">2</option>
+								<option value="3">3</option>
+								<option value="4">4</option>
+								<option value="5">5 (Strongly Agree)</option>
+							</select>
+						</div>
+
+						<div class="input-field col s12">
+							<h3>Question 5</h3>
+							<h5>I prefer being outdoors rather than staying indoors.</h5>
+							<select data-placeholder="" class="question-val" id="question5">
+								<option value="" disabled selected>Choose your option</option>
+								<option value="1">1 (Strongly Disagree)</option>
+								<option value="2">2</option>
+								<option value="3">3</option>
+								<option value="4">4</option>
+								<option value="5">5 (Strongly Agree)</option>
+							</select>
+						</div>
+
+						<div class="input-field col s12">
+							<h3>Question 6</h3>
+							<h5>I believe in love and long-term relationships.</h5>
+							<select data-placeholder="" class="question-val" id="question6">
+								<option value="" disabled selected>Choose your option</option>
+								<option value="1">1 (Strongly Disagree)</option>
+								<option value="2">2</option>
+								<option value="3">3</option>
+								<option value="4">4</option>
+								<option value="5">5 (Strongly Agree)</option>
+							</select>
+						</div>
+
+						<div class="input-field col s12">
+							<h3>Question 7</h3>
+							<h5>I don't get angry easily over situations beyond my control.</h5>
+							<select data-placeholder="" class="question-val" id="question7">
+								<option value="" disabled selected>Choose your option</option>
+								<option value="1">1 (Strongly Disagree)</option>
+								<option value="2">2</option>
+								<option value="3">3</option>
+								<option value="4">4</option>
+								<option value="5">5 (Strongly Agree)</option>
+							</select>
+						</div>
+
+						<div class="input-field col s12">
+							<h3>Question 8</h3>
+							<h5>I would put my family over my friends first.</h5>
+							<select data-placeholder="" class="question-val" id="question8">
+								<option value="" disabled selected>Choose your option</option>
+								<option value="1">1 (Strongly Disagree)</option>
+								<option value="2">2</option>
+								<option value="3">3</option>
+								<option value="4">4</option>
+								<option value="5">5 (Strongly Agree)</option>
+							</select>
+						</div>
+
+						<div class="input-field col s12">
+							<h3>Question 9</h3>
+							<h5>I value intelligence over physical beauty.</h5>
+							<select data-placeholder="" class="question-val" id="question9">
+								<option value="" disabled selected>Choose your option</option>
+								<option value="1">1 (Strongly Disagree)</option>
+								<option value="2">2</option>
+								<option value="3">3</option>
+								<option value="4">4</option>
+								<option value="5">5 (Strongly Agree)</option>
+							</select>
+						</div>
+
+						<div class="input-field col s12">
+							<h3>Question 10</h3>
+							<h5>I consider myself an introvert vs. an extrovert.</h5>
+							<select data-placeholder="" class="question-val" id="question10">
+								<option value="" disabled selected>Choose your option</option>
+								<option value="1">1 (Strongly Disagree)</option>
+								<option value="2">2</option>
+								<option value="3">3</option>
+								<option value="4">4</option>
+								<option value="5">5 (Strongly Agree)</option>
+							</select>
+						</div>
+
+						<!-- Survey Submit Button -->
+						<div>
+							<button type="submit" class="btn waves-effect waves-light" name="action" id="submitButton">Request Friend Match
+								<i class="material-icons right">send</i>
+							</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</main>
+
+	<footer class="page-footer purple accent-2">
+		<div class="container">
+			<div class="row">
+				<div class="col l6 s12">
+					<h5 class="white-text">Friend Finder App</h5>
+				</div>
+				<div class="col l4 offset-l2 s12">
+					<h5 class="white-text">Links</h5>
+					<ul>
+						<li><a class="grey-text text-lighten-3" href="/home">Home</a></li>
+						<!-- <li><a class="grey-text text-lighten-3" href="#" class="clear">Clear Table</a></li> -->
+						<li><a class="grey-text text-lighten-3" href="/api/friends">API Friends List</a></li>
+						<li><a class="grey-text text-lighten-3" href="https://github.com/tkropp/friend-finder">GitHub Repo</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="footer-copyright">
+			<div class="container">
+				<a class="grey-text text-lighten-4 center" href="https://github.com/thkropp1">© 2017 Teresa Kropp - Reference Work</a>
+			</div>
+		</div>
+	</footer>
+
+	<!-- Modal Dialog Displaying Closest Friend Match -->
+	<div id="resultsModal" class="modal">
+		<div class="modal-content">
+			<h4>Closest Friend Match</h4>
+			<div class="divider"></div>
+			<h5 id="userMatch">No Match</h5>
+			<img id="userMatchImage" class="materialboxed" height="300" width="200" src="">
+		</div>
+		<div class="modal-footer">
+			<a href="/survey" class="modal-action modal-close waves-effect waves-green btn-flat">Take Survey Again</a>
+		</div>
+	</div>
+
+	<script type="text/javascript">
+		$(document).ready(function() {
+			$('select').material_select();
+			$('.modal').modal({
+				dismissible: false, // Modal can be dismissed by clicking outside of the modal
+				opacity: .5, // Opacity of modal background
+				inDuration: 300, // Transition in duration
+				outDuration: 200, // Transition out duration
+				startingTop: '4%', // Starting top style attribute
+				endingTop: '10%' // Ending top style attribute
+			});
+		});
+
+
+		// Activate submit button
+		$('#submitButton').on('click', function(event) {
+			event.preventDefault(); // prevent page from reloading upon submit
+
+			// Form validation(make sure every input field is not left blank)
+			function validateForm() { // name and photo 
+				var isValid = true;
+
+				$('.validate').each(function() {
+					//console.log($(this), $(this).val());
+					if ($(this).val() === '') {
+					console.log("validate: false");
+						isValid = false;
+					}
+				});
+
+				$('.question-val').each(function() { // the questions
+					//console.log($(this), $(this).val());
+					if ($(this).val() === null){
+						console.log("question-val: false");
+						isValid = false;
+					}
+				});
+				return isValid;
+			}
+
+			// If all required fields are filled
+			if (validateForm() === true) {
+				// Gather user inputs
+				var userInput = {
+					name: $('#userName').val().trim(),
+					photo: $('#userPhoto').val().trim(),
+					scores: [
+						$('#question1').val().trim(),
+						$('#question2').val().trim(),
+						$('#question3').val().trim(),
+						$('#question4').val().trim(),
+						$('#question5').val().trim(),
+						$('#question6').val().trim(),
+						$('#question7').val().trim(),
+						$('#question8').val().trim(),
+						$('#question9').val().trim(),
+						$('#question10').val().trim()
+					]
+				};
+				// console.log('userInput = ' + JSON.stringify(userInput));
+				// Add user inputs to friends list
+				$.post('/api/friends', userInput)
+					.done(function(data) {
+						// console.log('response = ' + JSON.stringify(data));
+						// Set the name and image values of friend match
+						$("#userMatch").html(data.matchName);
+						$("#userMatchImage").attr("src", data.matchImage);
+						// Pop open the modal dialog
+						$('#resultsModal').modal('open');
+					});
+			} else { // Not all input fields have been filled in
+				alert("Please fill out all fields before submitting!");
+			}
+
+			return false;
+		});
+
+
+	// This function resets all of the data in our tables. This is intended to let you restart a demo.
+    function clearTable() {
+
+      var currentURL = window.location.origin;
+      $.ajax({ url: currentURL + "/api/clear", method: "POST" });
+
+    }
+
+    $('.clear').on('click', function(event) {
+      alert("Clearing...");
+      clearTable();
+
+      // Refresh the page after data is cleared
+      location.reload();
+
+    });
+
+	</script>
+</body>
+</html>
