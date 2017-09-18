@@ -6,17 +6,17 @@ I used Express to handle the routing.
 
 How to run the app:
 
-Clone this repo.
+1. Clone this repo.
 
-cd to the folder and open Git Bash.
+2. cd to the folder and open Git Bash.
 
-Type at the command line: 
+3. Type at the command line: 
 
-npm install 
-node server
-go to the browser: http://localhost:8080/
+A. npm install 
+B. node server
+C. go to the browser: http://localhost:8080/
 
-APP location: https://desolate-falls-77708.herokuapp.com/
+4. APP location: https://desolate-falls-77708.herokuapp.com/
 
 
 
