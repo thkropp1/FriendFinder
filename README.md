@@ -12,11 +12,13 @@ How to run the app:
 
 3. Type at the command line: 
 
-A. npm install 
-B. node server
-C. go to the browser: http://localhost:8080/
+npm install
 
-4. APP location: https://desolate-falls-77708.herokuapp.com/
+node server
+
+go to the browser: http://localhost:8080/
+
+APP location: https://desolate-falls-77708.herokuapp.com/
 
 
 
